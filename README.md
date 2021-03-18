@@ -84,3 +84,6 @@ When the parameters are read for each service, the configuration is merged using
 
 A helper script to render such a configuration is [get_config.sh](get_config.sh).
 
+### Deploying Demo Infrastructure
+
+The `demo/terraform` directory contains a Terraform configuration which provisions the KMS keys and CI IAM User required for this pipeline.
