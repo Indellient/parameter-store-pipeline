@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 import os
+import json
 
 service_config_locations = {
     "petshop-billing"    : ["global", "dev", "qa", "uat", "prod"],
