@@ -1,23 +1,22 @@
 {
-	"db_host": "ENC[AES256_GCM,data:3vFee6936JLSKDmZkMF8U5nltd9oqA==,iv:imqV7CF5qubQyDKDuX1VeoPcuhkQp5/4JvBLKzvDCxM=,tag:EG/csXaPF0nNxXNhULnq3g==,type:str]",
-	"stripe_api_key": "ENC[AES256_GCM,data:mzENXkWoSkSNIHQIRvaESLi6D+MVOa7FCyzluwL/m1w=,iv:G3EPed0ZnTitnOuerO/KiUlzQDp8UmYPQ+QjPvLw+Vg=,tag:PUiD2W3DJgV7vxcmBmOzag==,type:str]",
+	"db_host": "ENC[AES256_GCM,data:S1XZQR8diufn27/P/tJyAgladihifQ==,iv:EupyIU/y1MrP6vYU2MUuiJnqD+45S1lK/wrCR90Qjs4=,tag:8UPgBgompBoWz/aEwuQ6zw==,type:str]",
 	"environment": {
-		"name": "ENC[AES256_GCM,data:fik=,iv:4JXUhU7Tzkq19XF9Ttp9iaGMKEa6HmO18M+ZPYvRCKg=,tag:nHwYY+iEn2faaosz68QAFA==,type:str]"
+		"name": "ENC[AES256_GCM,data:jDE=,iv:kxueniCnuVefAHkTyYkGlfd6iSC61CRcMleOr+VS1l8=,tag:UaevB+a7mUzF45yCFGNZIQ==,type:str]"
 	},
 	"sops": {
 		"kms": [
 			{
 				"arn": "arn:aws:kms:us-east-1:133035965697:key/98ff6a19-21c9-464b-ac9d-8aaef8ced9be",
-				"created_at": "2021-03-18T17:41:49Z",
-				"enc": "AQICAHiT0EJ5r8xJZCnUIzRaGdtngGzD2dDKT5ZMXBqY72vCTQH/IkpkyzINJlm10YsCBFZeAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMaElffqrgEmj4r6dOAgEQgDvTtM8nQSPZW2QaT0hzSXJ6cBYkKReFieLc5Sp7OWMV7qN/0bux8LqrsN4pZPgMd8CjBDnY2mvcCfawpA==",
+				"created_at": "2021-03-18T22:42:21Z",
+				"enc": "AQICAHiT0EJ5r8xJZCnUIzRaGdtngGzD2dDKT5ZMXBqY72vCTQERbQaDHB0SmNzE5+79kR42AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMSmwnVPZFzFcHiTn0AgEQgDsyq741G7CgVbTXTyZ2B6QfUu37BkqRMJDovOZVTM2JRNl4mC0M9X0QVQw+Ft5h2UzqYxUHi5WcieFifw==",
 				"aws_profile": ""
 			}
 		],
 		"gcp_kms": null,
 		"azure_kv": null,
 		"hc_vault": null,
-		"lastmodified": "2021-03-18T17:41:49Z",
-		"mac": "ENC[AES256_GCM,data:qfHAsO68xWqwLCw5ca4jc6mJaPWOQoHHkhaTzBV2QsP6H1JeuFDF9x4Q7b5VP7k5Gb97ncp9hSoP7vfUNqkqnYq/pCUSl9mtfPR2uPWFtJFlAfjf0wawuUJoasZ7Uockbv6+2Gmej/DTgxgPjyAD0mVvv0x81LX6ShD+EUZTTag=,iv:lNTYRnhqjxb+Fi6JoMDtQ33VhQm6kfF3XA6r0l/7OaM=,tag:SSP6zfkTrbgYOreieD/DGQ==,type:str]",
+		"lastmodified": "2021-03-18T22:42:21Z",
+		"mac": "ENC[AES256_GCM,data:CCx7Ym5mLt5BReQvc2xwQpqegCjq1mfOrAp2/LcoMuQp2k4bMoeiV2RhKswAtP1iWJJd51sIQF+Fg3LQkn39dINkglvIwr6qriLPdwLkGEQ27P39clR5Oa/ogyK2IjdHpZ78qUFZPSVeqlEQVOtxdN0XEpTl+jq4rRB7E2JFEaU=,iv:bN55GrkPd/I9sE5d6qg0p5gow48OtDZ5gTELcc40Gfg=,tag:RXObVd4oyVKQTTkLw+82Vg==,type:str]",
 		"pgp": null,
 		"unencrypted_suffix": "_unencrypted",
 		"version": "3.6.1"
