@@ -14,9 +14,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: Setup Golang Packages
+      - name: Setup SOPS
+        uses: mdgreenwald/mozilla-sops-action@v1
+        with:
+          version: 3.6.1
+      - name: Setup Chamber
         run: |
           go get github.com/segmentio/chamber
-          go get github.com/mozilla/sops
       - name: Update Parameters
         run: chamber-write.py
