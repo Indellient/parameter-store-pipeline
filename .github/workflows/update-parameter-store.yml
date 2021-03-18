@@ -1,10 +1,10 @@
-name: Update Parameters
+name: Update Parameter Store
 
 on:
   push:
 
 jobs:
-  validate-data:
+  update-parameter-store:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,5 +21,5 @@ jobs:
       - name: Setup Chamber
         run: |
           go get github.com/segmentio/chamber
-      - name: Update Parameters
+      - name: Update Parameter Store
         run: chamber-write.py
