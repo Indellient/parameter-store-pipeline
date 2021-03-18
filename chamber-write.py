@@ -17,8 +17,15 @@ for key in service_config_locations:
         config=open(config_file_path).read()
         config_json=json.loads(config)
 
+        return_code=0
         if "sops" in config_json:
-            os.system(f"sops -d {key}/{env}/config.json | chamber write {key}/{env} config -")
+            return_code=os.system(f"sops -d {key}/{env}/config.json | chamber write {key}/{env} config -")
         else:
             print(f"INFO: {config_file_path} already unencrypted.")
-            os.system(f"cat {key}/{env}/config.json | chamber write {key}/{env} config -")
+            return_code=os.system(f"cat {key}/{env}/config.json | chamber write {key}/{env} config -")
+
+        if return_code != 0:
+                print("Error: either decrypting or updating the parameters was unsuccessful. Exiting.")
+                exit(1)
+
+        
