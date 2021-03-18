@@ -9,24 +9,24 @@ data "aws_caller_identity" current {
 }
 
 resource "aws_kms_key" "parameter_store" {
-  description             = "Parameter store kms master key"
+  description = "Parameter store kms master key"
   deletion_window_in_days = 10
-  enable_key_rotation     = true
+  enable_key_rotation = true
 }
 
 resource "aws_kms_alias" "parameter_store_alias" {
-  name          = "alias/chamber"
+  name = "alias/chamber"
   target_key_id = aws_kms_key.parameter_store.id
 }
 
 resource "aws_kms_key" "sops" {
-  description             = "SOPS kms master key"
+  description = "SOPS kms master key"
   deletion_window_in_days = 10
-  enable_key_rotation     = true
+  enable_key_rotation = true
 }
 
 resource "aws_kms_alias" "sops_alias" {
-  name          = "alias/sops"
+  name = "alias/sops"
   target_key_id = aws_kms_key.sops.id
 }
 
@@ -61,6 +61,30 @@ resource "aws_iam_user_policy" "ci_policy" {
             "Effect": "Allow",
             "Action": "ssm:DescribeParameters",
             "Resource": "*"
+        },
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Action": [
+                  "kms:Encrypt",
+                  "kms:Decrypt",
+                  "kms:ReEncrypt*",
+                  "kms:GenerateDataKey*",
+                  "kms:DescribeKey"
+            ],
+            "Resource": "${aws_kms_key.parameter_store.arn}"
+        },
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Action": [
+                  "kms:Encrypt",
+                  "kms:Decrypt",
+                  "kms:ReEncrypt*",
+                  "kms:GenerateDataKey*",
+                  "kms:DescribeKey"
+            ],
+            "Resource": "${aws_kms_key.sops.arn}"
         }
     ]
 }
