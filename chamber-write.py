@@ -11,5 +11,14 @@ service_config_locations = {
 
 for key in service_config_locations:
     for env in service_config_locations[key]:
-        print(f"Writing config for {key}/{env}: {key}/{env}/config.json")
-        os.system(f"cat {key}/{env}/config.json | chamber write {key}/{env} config -")
+        config_file_path=f"{key}/{env}/config.json"
+        print(f"Updating Parameter /{key}/{env}/config via {config_file_path}")
+
+        config=open(config_file_path).read()
+        config_json=json.loads(config)
+
+        if "sops" in config_json:
+            os.system(f"sops -d {key}/{env}/config.json | chamber write {key}/{env} config -")
+        else:
+            print(f"INFO: {config_file_path} already unencrypted.")
+            os.system(f"cat {key}/{env}/config.json | chamber write {key}/{env} config -")
