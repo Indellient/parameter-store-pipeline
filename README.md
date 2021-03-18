@@ -4,7 +4,7 @@
 
 AWS Parameter Store provides for a convenient and secure way (through KMS encryption) to store parameters that will be used in components running on AWS (through the ability for AWS services and AWS API clients to reference secrets via Parameter Store ARNs).
 
-The issue however, is that once AWS Parameter Store becomes the centralized configuration solution for an set of components, AWS Parameter Store becomes the source of truth for configuring those components. This goes against the principle of GitOps, because these parameters need to be versioned in a git repository such that their changes can be tracked.
+The issue however, is that once AWS Parameter Store becomes the centralized configuration solution for a set of components, AWS Parameter Store becomes the source of truth for configuring those components. This goes against the principle of GitOps, because these parameters need to be versioned in a git repository such that their changes can be tracked.
 
 An AWS Parameter Store Pipeline is a CI pipeline responsible for taking parameters encrypted and versioned in git, and updating their corresponding locations in AWS Parameter Store.
 
