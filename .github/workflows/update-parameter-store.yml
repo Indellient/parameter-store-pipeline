@@ -26,6 +26,8 @@ jobs:
         run: |
           go get -u github.com/segmentio/chamber
       - name: Update Parameter Store
-        run: ./chamber-write.py
+        run: |
+          export PATH=${PATH}:`go env GOPATH`/bin
+          ./chamber-write.py
         env:
           CHAMBER_KMS_KEY_ALIAS: "alias/chamber"
